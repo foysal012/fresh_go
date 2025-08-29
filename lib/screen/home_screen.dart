@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fresh_go/map_screen.dart';
 import 'package:fresh_go/model/product_model.dart';
 
-import 'model/categories_model.dart';
+import '../model/categories_model.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -114,57 +115,62 @@ class HomeScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.0),
-                            color: Color(0xffd0e3d0),
-                          ),
-                          child: SvgPicture.asset(
-                              'assets/location.svg',
-                              colorFilter: const ColorFilter.mode(
-                                  Color(0xff4FAF5A),
-                                  BlendMode.srcIn
-                              ),
-                              semanticsLabel: 'Red dash paths',
-                            )
-                        ),
-                        SizedBox(width: 10.0),
-          
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Text('Current Location',
-                                  style: TextStyle(
-                                      fontSize: 12.0,
-                                      color: Color(0xff606060)
-                                  ),
-                                ),
-                                SizedBox(width: 4.0,),
-                                Icon(Icons.arrow_drop_down_outlined, color: Color(0xff606060),)
-                              ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => MapScreen()));
+                      },
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(8.0),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.0),
+                              color: Color(0xffd0e3d0),
                             ),
-                            SizedBox(height: 4.0),
-          
-                            SizedBox(
-                              width: 178,
-                              child: Text('Jl. Soekarno Hatta 15A Malang',
-                                style: TextStyle(
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xff101010)
+                            child: SvgPicture.asset(
+                                'assets/location.svg',
+                                colorFilter: const ColorFilter.mode(
+                                    Color(0xff4FAF5A),
+                                    BlendMode.srcIn
                                 ),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
+                                semanticsLabel: 'Red dash paths',
+                              )
+                          ),
+                          SizedBox(width: 10.0),
+
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Text('Current Location',
+                                    style: TextStyle(
+                                        fontSize: 12.0,
+                                        color: Color(0xff606060)
+                                    ),
+                                  ),
+                                  SizedBox(width: 4.0,),
+                                  Icon(Icons.arrow_drop_down_outlined, color: Color(0xff606060),)
+                                ],
                               ),
-                            )
-                          ],
-                        ),
-                      ],
+                              SizedBox(height: 4.0),
+
+                              SizedBox(
+                                width: 178,
+                                child: Text('Jl. Soekarno Hatta 15A Malang',
+                                  style: TextStyle(
+                                      fontSize: 14.0,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xff101010)
+                                  ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
           
                     Container(
