@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fresh_go/screen/bookmark_screen.dart';
 import 'package:fresh_go/screen/order_screen.dart';
 import 'package:fresh_go/screen/profile_screen.dart';
-import 'screen/home_screen.dart';
+import '../../screen/home_screen.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
   const BottomNavigationBarScreen({super.key});

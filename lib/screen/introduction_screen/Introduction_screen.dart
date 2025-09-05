@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fresh_go/bottom_navigation_bar_screen.dart';
+import '../bottom_nav_bar/bottom_navigation_bar_screen.dart';
 
 class IntroductionScreen extends StatefulWidget {
   const IntroductionScreen({super.key});
